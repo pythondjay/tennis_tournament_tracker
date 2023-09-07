@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!---->
+
+{% block title %} {{block.super}} Home {% endblock title %}
+
+<!---->
+
+{% block content %}
+<h1>Tournaments</h1>
+<p><b>Tournament Name</b>: {{tournament.tournament_name}}</p>
+<p><b>Tournament Location </b>: {{tournament.location}}</p>
+<p><b>Start Date</b>: {{tourament.start_date}}</p>
+<p><b>End Date</b>: {{tourament.end_date}}</p>
+<p><b>Number of rounds</b>: {{tournament.numbers_of_rounds}}</p>
+<p><b>Tournament Type</b>: {{tournament.tournament_type_id}}</p>
+
+{% endblock content %}
