@@ -1,14 +1,18 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+<!---->
 
-<html>
-  <body>
-    <h1>Tennis Club Members</h1>
-    <p><b>First Name</b>: {{mem.firstname}}</p>
-    <p><b>Surname</b>: {{mem.lastname}}</p>
-    <p><b>Age</b>: {{mem.age}}</p>
-    <p><b>Email address</b>: {{mem.email}}</p>
-    <p><b>Phone Number</b>: {{mem.phone}}</p>
-    <p><b>Ability</b>: {{mem.ability}}</p>
-    <p><b>League</b>: {{mem.league}}</p>
-  </body>
-</html>
+{% block title %} {{block.super}} Home {% endblock title %}
+
+<!---->
+
+{% block content %}
+<h1>Tennis Club Members</h1>
+<p><b>First Name</b>: {{mem.firstname}}</p>
+<p><b>Surname</b>: {{mem.lastname}}</p>
+<p><b>Age</b>: {{mem.age}}</p>
+<p><b>Email address</b>: {{mem.email}}</p>
+<p><b>Phone Number</b>: {{mem.phone}}</p>
+<p><b>Ability</b>: {{mem.ability}}</p>
+<p><b>League</b>: {{mem.league}}</p>
+
+{% endblock content %}

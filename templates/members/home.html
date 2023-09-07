@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1><center>Welcome to TennisTracker</center></h1>
+{% extends 'base.html' %}
+<!---->
 
-    <p>{{member_cnt}} active users and counting</p>
+{% block title %} {{block.super}} Home {% endblock title %}
 
-    <p>{% lorem 8 p %}</p>
-  </body>
-</html>
+<!---->
+
+{% block content %}
+<h1><center>Welcome to TennisTracker</center></h1>
+
+<p>{{member_cnt}} active users and counting</p>
+
+<p>{% lorem 5 p %}</p>
+
+{% endblock content %}
