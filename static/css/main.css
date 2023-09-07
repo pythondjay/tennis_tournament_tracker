@@ -8,3 +8,13 @@ main {
     color:black;
     background-color: aliceblue;
 }
+
+.inactive {
+
+    color: red;
+}
+
+.active {
+
+    color: blue;
+}

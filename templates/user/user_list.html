@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<!---->
+
+{% block title %} {{block.super}} Home {% endblock title %}
+
+<!---->
+
+{% block content %}
+
+<span>
+  We really appreciate our {{ users|length }} users. Many thanks for using the
+  app.
+</span>
+
+<ul>
+  {% for user in users %}
+
+  <li>{% include 'includes/style_active_user.html' with data=user %}</li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
