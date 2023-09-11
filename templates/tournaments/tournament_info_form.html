@@ -8,10 +8,13 @@
 <!---->
 {% block content %}
 <h1><center>Tournament Information</center></h1>
-<div class="tournment-form">
-  <form method="post" action="{% url '' %}">
-    {% csrf_token %} {{ form }}
-    <input type="submit" value="Submit" />
-  </form>
-</div>
+<form
+  method="POST"
+  action="{% url 'tournament-info' %}"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %} {{ form }}
+  <input type="submit" value="Submit" />
+</form>
+
 {% endblock content %}
