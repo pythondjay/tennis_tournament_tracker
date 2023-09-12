@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .models import Members
+from .form import MembersForm
+
 
 # Create your views here.
 
@@ -32,6 +34,15 @@ def members_info(request, id):
         "members/members_info.html",
         context,
     )
+
+
+def members_info_form(request):
+    if request.POST:
+        form = MembersForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect(home_page)
+    return render(request, "members/members_info_form.html", {"form": MembersForm})
 
 
 class HomePage(TemplateView):
