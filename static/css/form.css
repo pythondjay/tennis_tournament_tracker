@@ -25,3 +25,43 @@
     background-color: #45a049;
   }
 
+
+.user-login input[type=text], input[type=password] {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px, 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  
+}
+
+
+.user-login button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.user-login button:hover {
+  opacity: 0.8;
+}
+
+.container button {
+  width: 15%;
+  padding: 14px;
+  background-color: red;
+  
+}
+
+body {
+  margin : 15%;
+  background-color: aliceblue;
+  
+}

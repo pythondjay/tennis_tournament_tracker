@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% load static %}
+<!---->
+{% block title %}{{ block.super}} - Post {% endblock title %}
+<!---->
+{% block stylesheet %} {{ block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}" />
+{% endblock stylesheet %}
+<!---->
+{% block content %}
+<h1><center>TennisTracker Login</center></h1>
+<div class="user-login">
+  <form
+    method="POST"
+    action="{% url 'user-login' %}"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %} {{ form }}
+  <button type="submit">Login</button />
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>   
+  </form>
+</div>
+  {% endblock content %}
+</div>
