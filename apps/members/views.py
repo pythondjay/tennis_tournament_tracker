@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView
+from django.contrib.auth.decorators import login_required
 from .models import Members
 from .form import MembersForm
 
@@ -22,6 +23,7 @@ def home_page(request):
     )
 
 
+@login_required
 def members_info(request, id):
     mem = Members.objects.get(pk=id)
 
@@ -36,6 +38,7 @@ def members_info(request, id):
     )
 
 
+@login_required
 def members_info_form(request):
     if request.POST:
         form = MembersForm(request.POST)
