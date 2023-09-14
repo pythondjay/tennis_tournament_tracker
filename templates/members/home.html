@@ -9,7 +9,9 @@
 
 <img src="static/images/tennis_racket.jpeg" alt="Tennis Racket image" />
 
-<h1><center>Welcome to TennisTracker</center></h1>
+<button><a href="{% url 'user-login' %}">Logout</a></button>
+
+<h1><center>Welcome {{user.username}} to TennisTracker</center></h1>
 
 <p>{{member_cnt}} active users and counting</p>
 

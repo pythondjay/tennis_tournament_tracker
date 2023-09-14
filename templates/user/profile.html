@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+<!---->
+
+{% block title %} {{block.super}} Profile {% endblock title %}
+
+<!---->
+
+{% block content %}
+
+<h1><center>Welcome {{user.username}}</center></h1>
+<p><a href="{% url 'user-login' %}">Logout</a></p>
+
+{% endblock content %}
