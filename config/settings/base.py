@@ -34,8 +34,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "apps.core.middleware.logging.simple_logging_middleware",
-    "apps.core.middleware.logging.ViewExecutionTimeMiddleware",
+    "apps.core.middleware.log.simple_logging_middleware",
+    # "apps.core.middleware.logging.ViewExecutionTimeMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -103,3 +103,37 @@ AUTH_USER_MODEL = "user.User"
 
 LOGIN_URL = "user-login"
 LOGOUT_REDIRECT_URL = "user-login"
+
+LOGGING = {
+    "version": 1,
+    "loggers": {
+        "logging_mw": {
+            "handlers": ["file", "console"],
+            "level": "DEBUG",
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "filters": ["only_if_debug_true"],
+        },
+        "file": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": str(BASE_DIR / "logs" / "req_res_logs.txt"),
+            "formatter": "verbose",
+        },
+    },
+    "formatters": {
+        "verbose": {
+            "format": "{asctime} {levelname} {module} :: {message}",
+            "style": "{",
+        }
+    },
+    "filters": {
+        "only_if_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        }
+    },
+}
