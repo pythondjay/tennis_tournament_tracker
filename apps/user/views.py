@@ -2,6 +2,7 @@ from typing import Optional
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from .models import User
 from apps.members.views import home_page
 
@@ -18,7 +19,7 @@ def user_list(request):
     return render(request, "user/user_list.html", context)
 
 
-def user_login(request):
+def login_user(request):
     error_message = None
 
     # Unbound state of our form
@@ -50,6 +51,7 @@ def profile(request):
     return render(request, "user/profile.html")
 
 
-def user_logout(request):
+def logout_user(request):
     logout(request)
+    messages.success(request, ("You have been logged out."))
     return redirect("login")

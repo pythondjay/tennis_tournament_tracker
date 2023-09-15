@@ -9,12 +9,30 @@
 
 <img src="static/images/tennis_racket.jpeg" alt="Tennis Racket image" />
 
-<button><a href="{% url 'user-login' %}">Logout</a></button>
-
+{% if user.is_authenticated %}
 <h1><center>Welcome {{user.username}} to TennisTracker</center></h1>
+
+<button type="button">
+  <a href="{% url 'members-info' %}">Members Information</a>
+</button>
+
+<button type="button">
+  <a href="{% url 'tournament-info' %}">Tournament Information</a>
+</button>
+
+<button type="button"><a href="{% url 'logout' %}">Logout</a></button>
 
 <p>{{member_cnt}} active users and counting</p>
 
 <p>{% lorem 5 p %}</p>
+
+{% else %}
+<button type="button">
+  <a href="{% url 'login' %}">Login To TennisTracker</a>
+</button>
+
+{% endif %}
+
+<!---->
 
 {% endblock content %}
