@@ -9,8 +9,11 @@ name: Django Test
 on:
   push:
     branches: ["dev"]
-  pull_request:
+  pull_request_target:
     branches: ["dev"]
+    types: [opened]
+    paths:
+      - "**.py"
 
 jobs:
   build:
@@ -27,16 +30,6 @@ jobs:
       db_host: ${{ vars.db_host }}
       db_port: ${{ vars.db_port }}
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
-
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_DB: ${{ vars.db_name }}
-          POSTGRES_USER: ${{ secrets.db_user }}
-          POSTGRES_PASSWORD: ${{ secrets.db_password }}
-        ports:
-          - 5432:5432
 
     steps:
       - uses: actions/checkout@v3
