@@ -357,6 +357,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # Logs
-req_res_logs.txt
+logs/*.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django,linux,windows,macos,visualstudiocode
