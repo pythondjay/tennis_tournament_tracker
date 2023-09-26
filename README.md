@@ -1,4 +1,4 @@
-# Tennis Tournament Tracker App
+# Tennis Player & Tournament Tracker App
 
 ## This app is currently in the development stage
 
@@ -6,7 +6,18 @@
 
 - The app could also be used by tennis fans to track their favourite tennis players as they travel around the world playing at different tournaments and/or by the tennis players themselves.
 
-SETUP:
+Features:
+
+- User Authentication: Users can create accounts, log in, and log out.
+- A Members section
+- A Tournaments section
+- A Tennis Players section
+- Tournament Results section
+- A User Profile section
+
+Usage:
+
+- To use this application in it's current form, you can follow the steps below:
 
 1. Clone the repository.
 2. Set up your virtual environment.
