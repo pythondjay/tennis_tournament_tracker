@@ -8,6 +8,14 @@
 {% block content %}
 
 <h1><center>Welcome {{user.username}}</center></h1>
-<p><a href="{% url 'user-login' %}">Logout</a></p>
+
+<div class="viewed-tournaments"
+    {% for tournament_id, tournament_name in request.session.viewed_tournaments %}
+   <a href="{% url 'tournament-info' id=tournament_id %}">{{tournament_name}}</a>
+
+   {% empty %}
+   <p>You haven't viewed any tournaments yet</p>
+    {% endfor %}
+</div>
 
 {% endblock content %}
